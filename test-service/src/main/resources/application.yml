@@ -1,0 +1,13 @@
+server:
+  port: 8300
+
+spring:
+  application:
+    name: service-1
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8400/eureka
