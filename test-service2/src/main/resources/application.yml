@@ -1,9 +1,9 @@
 server:
-  port: 8400
+  port: 8500
 
 spring:
   application:
-    name: service-1
+    name: service-2
 
 ribbon:
   eureka:
