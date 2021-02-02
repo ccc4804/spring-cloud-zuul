@@ -1,0 +1,12 @@
+server:
+  port: 8300
+
+spring:
+  application:
+    name: eureka
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+

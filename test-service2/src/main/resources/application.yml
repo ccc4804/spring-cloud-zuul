@@ -1,15 +1,17 @@
 server:
-  port: 8500
+  port: 8600
 
 spring:
   application:
-    name: service-2
+    name: service-b
 
-ribbon:
-  eureka:
-    enabled: true
-
+#ribbon:
+#  eureka:
+#    enabled: true
+#
 eureka:
+  instance:
+    preferIpAddress: true
   client:
     registerWithEureka: true
     fetchRegistry: true

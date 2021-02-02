@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.test'
+group = 'com.zuul'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -23,20 +23,20 @@ ext {
 }
 
 dependencies {
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-//    implementation 'org.springframework.cloud:spring-cloud-dependencies'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
 //    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
 
+//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-//    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    testImplementation 'io.projectreactor:reactor-test'
 }
 
 dependencyManagement {
