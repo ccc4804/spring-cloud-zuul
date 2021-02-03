@@ -3,12 +3,35 @@ server:
 
 spring:
   application:
-    name: eureka
+    name: zuulservice
 
 eureka:
+  instance:
+    preferIpAddress: true
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-    service-url:
-      defaultZone: http://localhost:8300/eureka
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8300/eureka/
 
+logging:
+  level:
+    com.netflix: DEBUG
+    org.springframework.web: DEBUG
+    com.thoughtmechanix: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: routes
+
+zuul:
+  routes:
+    service-a:
+      path: /s1/**
+      serviceId: service-a
+    service-b:
+      path: /s2/**
+
+      serviceId: service-b

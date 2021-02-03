@@ -24,12 +24,10 @@ ext {
 
 dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
-
-//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon'
-//    implementation 'org.springframework.boot:spring-boot-starter-web'
-
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
