@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient("service-b")
 public interface ServiceFeignClient {
-    @GetMapping(value = "/s2/ping",
-            consumes = "application/json")
-    ResponseEntity<String> ping();
+  @GetMapping(value = "/ping", consumes = "application/json")
+  ResponseEntity<String> ping();
 }

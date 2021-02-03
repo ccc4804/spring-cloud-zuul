@@ -13,14 +13,14 @@ eureka:
 spring:
   application:
     name: zuulservice
-  profiles:
-    active:
-      default
+#  profiles:
+#    active:
+#      default
 
 logging:
   level:
-    com.netflix: WARN
-    org.springframework.web: WARN
+    com.netflix: DEBUG
+    org.springframework.web: DEBUG
     com.thoughtmechanix: DEBUG
 
 management:
@@ -30,7 +30,19 @@ management:
         include: routes
 
 zuul:
-  ignored-services: service-a, service-b
   routes:
-    service-a: /s1/**
-    service-b: /s2/**
+    service-a:
+      path: /s1/**
+      serviceId: service-a
+    service-b:
+      path: /s2/**
+
+      serviceId: service-b
+
+#  ignored-services: service-a, service-b
+
+#api:
+#  service-a:
+#    path: /s1/**
+#  service-b:
+#    path: /s2/**
